@@ -1,1 +1,7 @@
-console.log("Hello world");
+async function getCelsius(location){
+
+}
+
+async function getFahrenheit(location){
+  
+}
