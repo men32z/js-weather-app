@@ -1,0 +1,26 @@
+{
+  "name": "js-weather-app",
+  "version": "1.0.0",
+  "description": "a weather app, the odin project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/men32z/js-weather-app.git"
+  },
+  "author": "Luis Preza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/men32z/js-weather-app/issues"
+  },
+  "homepage": "https://github.com/men32z/js-weather-app#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
