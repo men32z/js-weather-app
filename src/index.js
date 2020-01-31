@@ -1,17 +1,21 @@
-const weather = (() => {
-  let appid = 'a21ef4017ff27a42723559dd93f1f28e';
-
-  const getCelsius = async (location) => {
-    let endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=${appid}`;
-    let response = await fetch(endpoint, {mode: 'cors'});
+class Weather {
+  constructor(){
+    this.appid = 'a21ef4017ff27a42723559dd93f1f28e';
+    this.endpoint = 'https://api.openweathermap.org/data/2.5/weather';
+  }
+  async getWeather(units, location){
+    let response = await fetch(`${this.endpoint}?q=${location}&units=${units}&APPID=${this.appid}`, {mode: 'cors'});
     return response.json();
   }
 
-  const getFahrenheit = async (location) =>{
-
+  async getCelsius(location){
+    return await this.getWeather('Metric', location);
   }
 
-  return {getCelsius, getFahrenheit};
-})();
+  async getFahrenheit(location){
+    return await this.getWeather('Imperial', location);
+  }
+}
 
-weather.getCelsius("Guadalajara").then(res => console.log(res));
+app = new Weather();
+app.getCelsius("Guadalajara").then(res => console.log(res));
