@@ -1,23 +1,20 @@
 import iconfy from './weather-icons';
-import {format} from 'date-fns';
+import {nowFromUtc} from './helper';
 
 export const view = (()=>{
   let weather;
 
   const temp = () => {
     return `
-      <span class="temp">${Math.floor(weather.temp)} &deg;C</span> <br>
+      <span class="temp">${Math.floor(weather.temp)} &deg;${weather.type.toUpperCase()}</span> <br>
       <i class="wi wi-${iconfy(weather.icon)}"></i>  ${weather.main} - ${weather.description} <br>
     `;
   };
 
   const timeView = () => {
-    let time = new Date();
-    time.setUTCHours(weather.timezone);
-    time = format(time, "H:mm - MMM d, y");
     return `
       <span class="location"> ${weather.city} ${weather.country} </span>
-      <br> ${time}<br>
+      <br> ${nowFromUtc(weather.timezone)}<br>
     `;
   };
 
