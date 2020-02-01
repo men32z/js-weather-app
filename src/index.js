@@ -1,5 +1,7 @@
 import WeatherService from './js/weather-service';
+
 import Weather from './js/weather';
+
 
 //let weather = new WeatherService();
 //weather.getCelsius("Guadalajara").then(res => console.log(JSON.stringify(res)));
