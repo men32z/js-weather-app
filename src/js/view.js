@@ -1,4 +1,5 @@
 import iconfy from './weather-icons';
+
 export const view = (()=>{
   let weather;
 
@@ -9,9 +10,25 @@ export const view = (()=>{
     `;
   };
 
+  const timeView = () => `
+    <span class="location"> ${weather.city} ${weather.country} </span>
+    <br> time - date <br>
+  `;
+
+  const details = () => {
+    return `
+      <hr>
+      <div class="col-4"> Wind <br> ${weather.wind} M/s </div>
+      <div class="col-4"> Clouds <br> ${weather.clouds} % </div>
+      <div class="col-4"> Humidity <br> ${weather.humidity} % </div>
+    `;
+  }
+
   const render = (data)  => {
     weather = data;
     document.querySelector('#temp').innerHTML = temp();
+    document.querySelector('#time').innerHTML = timeView();
+    document.querySelector('#details').innerHTML = details();
   };
 
   return {render};

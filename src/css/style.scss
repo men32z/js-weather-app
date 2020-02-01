@@ -39,6 +39,7 @@ body,html {
 }
 
 #temp {
+  cursor:pointer;
   font-size: 1.5em;
   i {
     font-size: 1.5em;
@@ -46,5 +47,13 @@ body,html {
   .temp{
     font-size: 4em;
   }
+}
+#time {
+  .location {
+    font-size: 1.3em;
+  }
+}
 
+#details {
+  font-size: 1.2em;
 }
