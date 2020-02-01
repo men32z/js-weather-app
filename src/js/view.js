@@ -1,4 +1,5 @@
 import iconfy from './weather-icons';
+import {format} from 'date-fns';
 
 export const view = (()=>{
   let weather;
@@ -10,10 +11,15 @@ export const view = (()=>{
     `;
   };
 
-  const timeView = () => `
-    <span class="location"> ${weather.city} ${weather.country} </span>
-    <br> time - date <br>
-  `;
+  const timeView = () => {
+    let time = new Date();
+    time.setUTCHours(weather.timezone);
+    time = format(time, "H:mm - MMM d, y");
+    return `
+      <span class="location"> ${weather.city} ${weather.country} </span>
+      <br> ${time}<br>
+    `;
+  };
 
   const details = () => {
     return `

@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "date-fns": "^2.9.0",
     "weather-icons-npm": "^10.0.0"
   }
 }
