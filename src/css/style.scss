@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "~weather-icons-npm/sass/weather-icons";
 
 body,html {
   height: 100%;
@@ -37,6 +38,13 @@ body,html {
   }
 }
 
-.temp {
-  font-size: 6em;
+#temp {
+  font-size: 1.5em;
+  i {
+    font-size: 1.5em;
+  }
+  .temp{
+    font-size: 4em;
+  }
+
 }

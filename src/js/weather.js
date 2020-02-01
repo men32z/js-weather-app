@@ -3,7 +3,7 @@ export default class Weather {
     let {
       name:city,
       timezone, main: {temp, humidity},
-      weather: [{main, description}],
+      weather: [{main, description, id: icon}],
       sys:{country},
       wind: {speed: wind},
       clouds: {all: clouds}
@@ -11,6 +11,6 @@ export default class Weather {
 
     timezone = timezone / 60 / 60;
 
-    Object.assign(this, {temp, main, description, humidity, wind, clouds, city, country, timezone});
+    Object.assign(this, {temp, main, description, humidity, wind, clouds, city, country, timezone, icon});
   }
 }
