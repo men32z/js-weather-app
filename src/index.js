@@ -1,3 +1,4 @@
+/* eslint-disable-next-line */
 import Swal from 'sweetalert2';
 import search from './js/search';
 

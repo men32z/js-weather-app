@@ -1,4 +1,5 @@
 const path = require('path');
+/* eslint-disable-next-line */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {

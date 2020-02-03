@@ -1,3 +1,4 @@
+/* eslint-disable-next-line */
 import { format, addHours } from 'date-fns';
 
 function nowFromUtc(utc) {
