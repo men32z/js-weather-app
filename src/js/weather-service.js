@@ -4,8 +4,14 @@ export default class WeatherService {
     this.endpoint = 'https://api.openweathermap.org/data/2.5/weather';
   }
   async getWeather(units, location){
-    let response = await fetch(`${this.endpoint}?q=${location}&units=${units}&APPID=${this.appid}`, {mode: 'cors'});
-    return response.json();
+    try {
+      let response = await fetch(`${this.endpoint}?q=${location}&units=${units}&APPID=${this.appid}`, {mode: 'cors'});
+      let result = await response.json();
+      if(result.cod != 200) throw "something is wrong, try another city";
+      return result;
+    } catch (e) {
+      return {error : e};
+    }
   }
 
   async getCelsius(location){
