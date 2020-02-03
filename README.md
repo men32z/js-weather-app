@@ -13,6 +13,22 @@ You can find the original project specification [here](https://www.theodinprojec
 
 [here](https://raw.githack.com/men32z/js-weather-app/the-app/dist/index.html)
 
+## Local Install
+
+```sh
+git clone git@github.com:men32z/js-weather-app.git
+cd js-weather-app
+npm install
+npm run build
+```
+
+### Usage
+
+```sh
+npm run test
+```
+
+
 ## Built With:
 
 Javascript, Webpack, Html, scss,  Bootstrap framework, SweetAlert2, weather-icons-npm, date-fns.
