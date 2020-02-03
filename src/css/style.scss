@@ -1,0 +1,59 @@
+@import "bootstrap";
+@import "~weather-icons-npm/sass/weather-icons";
+
+body,html {
+  height: 100%;
+}
+
+.w-app {
+  background-color: #343a40;
+  color:white;
+}
+
+.search {
+  img {
+    position: absolute;
+    left: 25px;
+    top: 45px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+  input {
+    color: white;
+    border: none;
+    border-bottom: 1px solid transparent;
+    border-right: 1px solid transparent;
+    font-size: 2em;
+    width: 100%;
+    height: 60px;
+    padding-left: 50px;
+    background: transparent;
+    transition: border 0.5s ease-out;
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid white;
+      border-right: 1px solid white;
+    }
+  }
+}
+
+#temp {
+  cursor:pointer;
+  font-size: 1.5em;
+  i {
+    font-size: 1.5em;
+  }
+  .temp{
+    font-size: 4em;
+  }
+}
+#time {
+  .location {
+    font-size: 1.3em;
+  }
+}
+
+#details {
+  font-size: 1.2em;
+}
