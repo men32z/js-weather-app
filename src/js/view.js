@@ -21,7 +21,7 @@ export const view = (()=>{
   const details = () => {
     return `
       <hr>
-      <div class="col-4"> Wind <br> ${weather.wind} M/s </div>
+      <div class="col-4"> Wind <br> ${weather.wind} M/${weather.type == 'c' ? 's': 'h'} </div>
       <div class="col-4"> Clouds <br> ${weather.clouds} % </div>
       <div class="col-4"> Humidity <br> ${weather.humidity} % </div>
     `;
