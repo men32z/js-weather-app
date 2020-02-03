@@ -13,13 +13,13 @@ module.exports = {
         test: /\.scss$/,
         loader: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader"
-        ]
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.svg$/,
-        loader: 'svg-inline-loader'
+        loader: 'svg-inline-loader',
       },
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+)?$/,
@@ -28,16 +28,16 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'fonts/'
-            }
-          }
-        ]
-      }
-    ]
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.css'
+      filename: 'style.css',
     }),
   ],
 };

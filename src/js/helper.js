@@ -1,9 +1,9 @@
 import { format, addHours } from 'date-fns';
 
-export function nowFromUtc(utc){
-  let searched_date;
-  let timeLocal = new Date();
-  let timeUtc = new Date();
+function nowFromUtc(utc) {
+  let searchedDate;
+  const timeLocal = new Date();
+  const timeUtc = new Date();
 
   try {
     timeUtc.setFullYear(timeLocal.getUTCFullYear());
@@ -13,9 +13,11 @@ export function nowFromUtc(utc){
     timeUtc.setMinutes(timeLocal.getUTCMinutes());
     timeUtc.setSeconds(timeLocal.getUTCSeconds());
 
-    searched_date = format(addHours(timeUtc, utc), "H:mm - MMM d, y");
+    searchedDate = format(addHours(timeUtc, utc), 'H:mm - MMM d, y');
   } catch (e) {
-    searched_date = `${timeLocal.getHours()}:${timeLocal.getMinutes()}"`;
+    searchedDate = `${timeLocal.getHours()}:${timeLocal.getMinutes()}"`;
   }
-  return searched_date;
+  return searchedDate;
 }
+
+export default nowFromUtc;

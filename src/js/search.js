@@ -1,34 +1,34 @@
 import WeatherService from './weather-service';
 import Weather from './weather';
-import {view} from './view';
+import view from './view';
 
 const search = (() => {
-
-  let celsius, fahrenheit;
+  let celsius; let
+    fahrenheit;
   let type = true;
-  let weather = new WeatherService();
+  const weather = new WeatherService();
 
-  let search = async (query) => {
-      let cs = await weather.getCelsius(query);
-      let fh = await weather.getFahrenheit(query);
+  const search = async (query) => {
+    const cs = await weather.getCelsius(query);
+    const fh = await weather.getFahrenheit(query);
 
-      if(!cs.error && !fh.error){
-        celsius = new Weather(cs);
-        fahrenheit = new Weather(fh,'f');
-        view.render(celsius);
-      } else {
-        throw cs.error || fh.error;
-      }
+    if (!cs.error && !fh.error) {
+      celsius = new Weather(cs);
+      fahrenheit = new Weather(fh, 'f');
+      view.render(celsius);
+    } else {
+      throw cs.error || fh.error;
+    }
   };
 
-  const toggle = ()=> {
-    if(celsius && fahrenheit && celsius.temp){
+  const toggle = () => {
+    if (celsius && fahrenheit && celsius.temp) {
       type = !type;
       view.render(type ? celsius : fahrenheit);
     }
   };
 
-  return {search, toggle};
+  return { search, toggle };
 })();
 
 export default search;
